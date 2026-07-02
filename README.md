@@ -386,6 +386,15 @@ Be aware that once you set the STS header or submit your domains to the HSTS pre
 
 
 ## LAN IP 
+```bash
+geoip2 /config/geoip2db/dbip-country-lite.mmdb {
+    auto_reload 1w;
+    $geoip2_data_continent_code   continent code;
+    $geoip2_data_country_iso_code country iso_code;
+}
+
+# Country Codes: https://en.wikipedia.org/wiki/ISO_3166-2
+
 geo $lan-ip {
     default no;
     10.0.0.0/8 yes;
@@ -393,4 +402,5 @@ geo $lan-ip {
     192.168.0.0/16 yes;
     127.0.0.1 yes;
 }
+```
 
