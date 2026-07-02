@@ -385,4 +385,12 @@ To address this, Google maintains a “HSTS preload list” of web domains and s
 Be aware that once you set the STS header or submit your domains to the HSTS preload list, it is impossible to remove it. It’s a one‑way decision to make your domains available over HTTPS.
 
 
+## LAN IP 
+geo $lan-ip {
+    default no;
+    10.0.0.0/8 yes;
+    172.16.0.0/12 yes;
+    192.168.0.0/16 yes;
+    127.0.0.1 yes;
+}
 
